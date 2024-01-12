@@ -1,0 +1,30 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Programmed by Jennylyn Carbonell");
+        
+        // Type weight in pounds
+        Console.Write ("Enter weight in Pounds (lbs): ");
+        double pounds = Convert.ToInt32(Console.ReadLine());
+        double  kilogram = pounds * 0.453592;
+        Console.WriteLine ("Weight in Pounds (lbs):"+ pounds);
+        Console.WriteLine ("Weight converted to Kilogram (kg):"+ kilogram);
+        
+        // Type distance in miles
+        Console.Write ("Enter distance in miles: ");
+        double miles =  Convert.ToInt32(Console.ReadLine());
+        double kilometer = miles * 1.60934;
+        Console.WriteLine ("Distance converted to Kilometer (km):"+ kilometer);
+    
+        // Type temperature in farenheit
+        Console.Write ("Enter temperature in farenheit: ");
+        double farenheit = Convert.ToInt32(Console.ReadLine());
+        double celcius = farenheit - 32 * 0.556;
+        Console.WriteLine ("Weight converted to Celcius:" + celcius);
+    
+    
+    }
+}
