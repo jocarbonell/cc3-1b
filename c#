@@ -110,6 +110,33 @@ public class HelloWorld
         string place = "Noxus";
         
         Console.WriteLine("A million years ago, there were demons who stole the " + item + " which is believed to be the most powerful item in the world. " + place + " is a powerful empire with a fearsome reputation; however, at that time, the protectors of the said item went to train their powers in another empire along with another ruler. The demons want to rule and own everything. Fortunately, there are five heroes who are brave and capable enough to fight against them. Meet " + name1 + ", " + name2 + ", " + name3 + ", " + name4 + ", " + name5 + ". Together, they went to get back the lost sword and save the world from the evil hands of their opponents. The five traveled far away, and before arriving at their destination, they encountered numerous obstacles along the route. When they arrived at the empire of the demons, a lot of them had already started to attack them. " + name1 + " moved first by blowing her " + abilities1 + ", which caused mass destruction to the place. The demons released more warriors to fight, but some were caught by " + name2 + "'s " + abilities2 + ". " + name3 + " dealt a lot of damage with his " + abilities3 + ", as well as " + name4 + " poisoning everyone with his " + abilities4 + ". With the final blow, " + name5 + " used his " + abilities5 + " ability to throw blades against the demons. They eventually succeeded in recovering the " + item + ". After destroying the demons, the empire starts to live peacefully once more. It was all down to the five valiant heroes who stood up for their homeland. Following that, the world is free of the darkness that the demons had brought.");
+        
+         Console.WriteLine ("================================================");
+         
+        // Part two num1
+        
+        // Part two num2
+        
+        // Part two num3
+        
+        int Rows;
+        int Num;
+        
+        Console.WriteLine("Input: ");
+        
+        Rows = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        
+        for (int i = 0; i < Rows; i++)
+        {
+             Num = 1;
+            for (int j = 0; j < Rows - i; j++)
+            {
+                Console.Write(Num + " ");
+                Num++;
+        }
+        Console.WriteLine();
+        }
     }
 }
         
