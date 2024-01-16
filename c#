@@ -120,14 +120,14 @@ public class HelloWorld
          
         // RIGHT TRIANGLE
 
-int num;
+int number;
 
 do
 {
     Console.Write("Input: ");
     string input = Console.ReadLine();
 
-    if (int.TryParse(input, out num) && num > 0)
+    if (int.TryParse(input, out number) && number > 0)
     {
         break;
     }
@@ -135,7 +135,7 @@ do
     Console.WriteLine("Invalid input.");
 } while (true);
 
-for (int i = 1; i <= num; i++)
+for (int i = 1; i <= number; i++)
 {
     for (int j = 1; j <= i; j++)
     {
@@ -148,14 +148,14 @@ for (int i = 1; i <= num; i++)
         
         // INVERSED-RIGHT TRIANGLE
         
-        int num;
+        int num3;
 
 do
 {
     Console.Write("Input: ");
-} while (!int.TryParse(Console.ReadLine(), out num) || num <= 0);
+} while (!int.TryParse(Console.ReadLine(), out num3) || num3 <= 0);
 
-for (int i = num; i >= 1; i--)
+for (int i = num3; i >= 1; i--)
 {
     for (int j = 1; j <= i; j++)
     {
