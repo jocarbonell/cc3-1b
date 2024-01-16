@@ -29,11 +29,60 @@ public class HelloWorld
         double celcius = farenheit - 32 * 0.556;
         Console.WriteLine ("Farenheit converted to Celcius:" + celcius);
         
-         Console.WriteLine ("================================================")
-         
-         int studentsAge = .
+        Console.WriteLine ("================================================")
         
-        // 
+        // Student 1 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge1 = Console.ReadLine();
+        Console.WriteLine("Age of Student 1: " + studentAge1);
+
+        // Student 2 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge2 = Console.ReadLine();
+        Console.WriteLine("Age of Student 2: " + studentAge2);
+
+        // Student 3 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge3 = Console.ReadLine();
+        Console.WriteLine("Age of Student 3: " + studentAge3);
+
+        // Student 4 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge4 = Console.ReadLine();
+        Console.WriteLine("Age of Student 4: " + studentAge4);
+
+        // Student 5 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge5 = Console.ReadLine();
+        Console.WriteLine("Age of Student 5: " + studentAge5);
+
+        // Student 6 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge6 = Console.ReadLine();
+        Console.WriteLine("Age of Student 6: " + studentAge6);
+
+        // Student 7 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge7 = Console.ReadLine();
+        Console.WriteLine("Age of Student 7: " + studentAge7);
+
+        // Student 8 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge8 = Console.ReadLine();
+        Console.WriteLine("Age of Student 8: " + studentAge8);
+
+        // Student 9 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge9 = Console.ReadLine();
+        Console.WriteLine("Age of Student 9: " + studentAge9);
+
+        // Student 10 type their age
+        Console.Write ("Enter your age: ");
+        string studentAge10 = Console.ReadLine();
+        Console.WriteLine("Age of Student 10: " + studentAge10);
+
+
+        
     
     
     }
