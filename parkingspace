@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+
+public enum VehicleSize
+{
+    Motorcycle,
+    Compact,
+    Large
+}
+
+public abstract class Vehicle
+{
+    public string LicensePlate { get; }
+    public string Type { get; }
+
+    public Vehicle(string licensePlate, string type)
+    {
+        LicensePlate = licensePlate;
+        Type = type;
+    }
+}
+
+public class Car : Vehicle
+{
+    public Car(string licensePlate) : base(licensePlate, "Car") { }
+}
+
+public class Truck : Vehicle
+{
+    public Truck(string licensePlate) : base(licensePlate, "Truck") { }
+}
+
+public class Motorcycle : Vehicle
+{
+    public Motorcycle(string licensePlate) : base(licensePlate, "Motorcycle") { }
+}
+
+public class ParkingSpot
+{
+    public int Level { get; }
+    public int Row { get; }
+    public int SpotNumber { get; }
+    public bool IsAvailable { get; private set; }
+    public Vehicle ParkedVehicle { get; private set; }
+
+    public ParkingSpot(int level, int row, int spotNumber)
+    {
+        Level = level;
+        Row = row;
+        SpotNumber = spotNumber;
+        IsAvailable = true;
+    }
+
+    public bool CanFit(Vehicle vehicle)
+    {
+        // Logic to check if the spot can fit the vehicle (e.g., size restrictions)
+        return true;
+    }
+
+    public void Park(Vehicle vehicle)
+    {
+        IsAvailable = false;
+        ParkedVehicle = vehicle;
+    }
+
+    public void Remove()
+    {
+        IsAvailable = true;
+        ParkedVehicle = null;
+    }
+}
+
+public class ParkingLot
+{
+    private List<ParkingSpot> _spots;
+
+    public ParkingLot(int levels, int rowsPerLevel, int spotsPerRow)
+    {
+        _spots = new List<ParkingSpot>();
+        InitializeParkingSpots(levels, rowsPerLevel, spotsPerRow);
+    }
+
+    private void InitializeParkingSpots(int levels, int rowsPerLevel, int spotsPerRow)
+    {
+        for (int level = 0; level < levels; level++)
+        {
+            for (int row = 0; row < rowsPerLevel; row++)
+            {
+                for (int spotNumber = 1; spotNumber <= spotsPerRow; spotNumber++)
+                {
+                    _spots.Add(new ParkingSpot(level, row, spotNumber));
+                }
+            }
+        }
+    }
+
+    public List<ParkingSpot> FindAvailableSpots()
+    {
+        return _spots.FindAll(spot => spot.IsAvailable);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Example usage:
+        var parkingLot = new ParkingLot(levels: 3, rowsPerLevel: 5, spotsPerRow: 10);
+        var availableSpots = parkingLot.FindAvailableSpots();
+        Console.WriteLine("Available parking spots:");
+        foreach (var spot in availableSpots)
+        {
+            Console.WriteLine($"Level {spot.Level}, Row {spot.Row}, Spot {spot.SpotNumber}");
+        }
+    }
+}
