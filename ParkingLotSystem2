@@ -1,0 +1,160 @@
+using System;
+using System.Collections.Generic;
+
+public enum VehicleSize
+{
+    Motorcycle,
+    Compact,
+    Large
+}
+
+public class Vehicle
+{
+    public string LicensePlate { get; }
+
+    public Vehicle(string licensePlate)
+    {
+        LicensePlate = licensePlate;
+    }
+
+    public virtual VehicleSize Size { get; }
+}
+
+public class Car : Vehicle
+{
+    public Car(string licensePlate) : base(licensePlate) { }
+
+    public override VehicleSize Size => VehicleSize.Compact;
+}
+
+public class Truck : Vehicle
+{
+    public Truck(string licensePlate) : base(licensePlate) { }
+
+    public override VehicleSize Size => VehicleSize.Large;
+}
+
+public class Motorcycle : Vehicle
+{
+    public Motorcycle(string licensePlate) : base(licensePlate) { }
+
+    public override VehicleSize Size => VehicleSize.Motorcycle;
+}
+
+public class Spot
+{
+    public bool IsAvailable { get; set; }
+    public VehicleSize Size { get; }
+
+    public Spot(VehicleSize size)
+    {
+        Size = size;
+        IsAvailable = true;
+    }
+}
+
+public class Row
+{
+    public List<Spot> Spots { get; }
+
+    public Row(int numberOfSpots, VehicleSize size)
+    {
+        Spots = new List<Spot>();
+        for (int i = 0; i < numberOfSpots; i++)
+        {
+            Spots.Add(new Spot(size));
+        }
+    }
+}
+
+public class Level
+{
+    public List<Row> Rows { get; }
+
+    public Level(int numberOfRows, int spotsPerRow, VehicleSize size)
+    {
+        Rows = new List<Row>();
+        for (int i = 0; i < numberOfRows; i++)
+        {
+            Rows.Add(new Row(spotsPerRow, size));
+        }
+    }
+}
+
+public class ParkingLot
+{
+    private List<Level> levels;
+
+    public ParkingLot(int numberOfLevels, int numberOfRows, int spotsPerRow)
+    {
+        levels = new List<Level>();
+        for (int i = 0; i < numberOfLevels; i++)
+        {
+            levels.Add(new Level(numberOfRows, spotsPerRow, VehicleSize.Large));
+        }
+    }
+
+    public bool ParkVehicle(Vehicle vehicle)
+    {
+        foreach (var level in levels)
+        {
+            foreach (var row in level.Rows)
+            {
+                foreach (var spot in row.Spots)
+                {
+                    if (spot.IsAvailable && vehicle.Size <= spot.Size)
+                    {
+                        spot.IsAvailable = false;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool RemoveVehicle(Vehicle vehicle)
+    {
+        foreach (var level in levels)
+        {
+            foreach (var row in level.Rows)
+            {
+                foreach (var spot in row.Spots)
+                {
+                    if (!spot.IsAvailable && vehicle.LicensePlate == spot.Vehicle.LicensePlate)
+                    {
+                        spot.IsAvailable = true;
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int levels = 2;
+        int numberOfRows = 5;
+        int spotsPerRow = 10;
+        ParkingLot parkingLot = new ParkingLot(levels, numberOfRows, spotsPerRow);
+
+        Car car1 = new Car("ABC123");
+        Car car2 = new Car("DEF456");
+        Truck truck1 = new Truck("GHI789");
+        Motorcycle bike1 = new Motorcycle("JKL012");
+
+        Console.WriteLine("Park Car1: " + parkingLot.ParkVehicle(car1));
+        Console.WriteLine("Park Car2: " + parkingLot.ParkVehicle(car2));
+        Console.WriteLine("Park Truck1: " + parkingLot.ParkVehicle(truck1));
+        Console.WriteLine("Park Bike1: " + parkingLot.ParkVehicle(bike1));
+
+        Console.WriteLine("Remove Car1: " + parkingLot.RemoveVehicle(car1));
+        Console.WriteLine("Remove Car2: " + parkingLot.RemoveVehicle(car2));
+        Console.WriteLine("Remove Truck1: " + parkingLot.RemoveVehicle(truck1));
+        Console.WriteLine("Remove Bike1: " + parkingLot.RemoveVehicle(bike1));
+    }
+}
