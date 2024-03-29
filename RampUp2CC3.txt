@@ -1,0 +1,214 @@
+using System;
+
+public class RampUp2
+{
+    public static void Main(string[] args)
+    {
+        
+        // PROGRAMMED BY JENNYLYN CARBONELL
+
+        // PART ONE  OF THE ACTIVITY
+        Console.WriteLine ("PART ONE");
+
+
+        // Type weight in pounds
+        Console.Write ("Weight in Pounds (lbs): ");
+        double pounds = Convert.ToDouble(Console.ReadLine());
+        double kilogram = pounds * 0.453592;
+        Console.WriteLine ("Weight to Kilogram (kg):" + kilogram);
+        
+        // Line breaker
+        Console.WriteLine ("================================================");
+        
+        // Type distance in miles
+        Console.Write ("Length in Miles (mi): ");
+        double miles =  Convert.ToInt32(Console.ReadLine());
+        double kilometer = miles * 1.60934f;
+        Console.WriteLine ("Length in Kilometer (km):" + kilometer);
+
+        // Line breaker
+         Console.WriteLine ("================================================");
+    
+        // Type temperature in farenheit
+        Console.Write ("Temperature in Fahrenheit: ");
+        double fahrenheit = Convert.ToInt32(Console.ReadLine());
+        double celcius = fahrenheit - 32 * 0.556f;
+        Console.WriteLine ("Temperature to Celcius:" + celcius);
+
+        // Line breaker
+        Console.WriteLine ("================================================");
+        
+        // Student 1 type their age
+        
+        int studentAge1;
+        Console.Write ("Age of Student 1: " );
+        studentAge1 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 2 type their age
+        
+        int studentAge2;
+        Console.Write ("Age of Student 2: " );
+        studentAge2 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 3 type their age
+        
+        int studentAge3;
+        Console.Write ("Age of Student 3: " );
+        studentAge3 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 4 type their age
+        
+        int studentAge4;
+        Console.Write ("Age of Student 4: " );
+        studentAge4 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 5 type their age
+        
+        int studentAge5;
+        Console.Write ("Age of Student 5: " );
+        studentAge5 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 6 type their age
+        
+        int studentAge6;
+        Console.Write ("Age of Student 6: " );
+        studentAge6 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 7 type their age
+        
+        int studentAge7;
+        Console.Write ("Age of Student 7: " );
+        studentAge7 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 8 type their age
+        
+        int studentAge8;
+        Console.Write ("Age of Student 8: " );
+        studentAge8 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 9 type their age
+        
+        int studentAge9;
+        Console.Write ("Age of Student 9: " );
+        studentAge9 = Convert.ToInt32(Console.ReadLine());;
+        
+        // Student 10 type their age
+        
+        int studentAge10;
+        Console.Write ("Age of Student 10: " );
+        studentAge10 = Convert.ToInt32(Console.ReadLine());;
+        
+        
+         int age = ( studentAge1 + studentAge2 + studentAge3 + studentAge4 + studentAge5 + studentAge6 + studentAge7 + studentAge8 + studentAge9 + studentAge10 );
+         double average = age / 10;
+         Console.WriteLine("The average age of students is: " + average);
+
+        // Line breaker
+         Console.WriteLine ("================================================");
+
+        // Characters of the story
+        string name1 = "Zeri", name2 = "Jett", name3 = "Jinx", name4 = "Draven", name5 = "Viper";
+
+        // Abilities of the characters in the story
+        string abilities1 = "nova of energy",
+                abilities2 = "updraft",
+                abilities3 = "trap ability",
+                abilities4 = "spinning blade",
+                abilities5 = "snakebite";
+
+        // Item in the story
+        string item = "flaming sword";
+
+        // Place in the story
+        string place = "Noxus";
+
+        // Story plot
+        Console.WriteLine("A million years ago, there were demons who stole the " + item + " which is believed to be the most powerful item in the world. " + place + " is a powerful empire with a fearsome reputation; however, at that time, the protectors of the said item went to train their powers in another empire along with another ruler. The demons want to rule and own everything. Fortunately, there are five heroes who are brave and capable enough to fight against them. Meet " + name1 + ", " + name2 + ", " + name3 + ", " + name4 + ", " + name5 + ". Together, they went to get back the lost sword and save the world from the evil hands of their opponents. The five traveled far away, and before arriving at their destination, they encountered numerous obstacles along the route. When they arrived at the empire of the demons, a lot of them had already started to attack them. " + name1 + " moved first by blowing her " + abilities1 + ", which caused mass destruction to the place. The demons released more warriors to fight, but some were caught by " + name2 + "'s " + abilities2 + ". " + name3 + " dealt a lot of damage with his " + abilities3 + ", as well as " + name4 + " poisoning everyone with his " + abilities4 + ". With the final blow, " + name5 + " used his " + abilities5 + " ability to throw blades against the demons. They eventually succeeded in recovering the " + item + ". After destroying the demons, the empire starts to live peacefully once more. It was all down to the five valiant heroes who stood up for their homeland. Following that, the world is free of the darkness that the demons had brought.");
+
+        // Line breaker
+        Console.WriteLine ("================================================");
+
+        // PART TWO OF THE ACTIVITY
+        Console.WriteLine ("PART TWO");
+    
+         
+        // RIGHT TRIANGLE
+
+    Console.WriteLine("I. RIGHT TRIANGLE");
+
+int number;
+
+do
+{
+    Console.Write("Input: ");
+    string input = Console.ReadLine();
+
+    if (int.TryParse(input, out number) && number > 0)
+    {
+        break;
+    }
+
+    Console.WriteLine("Invalid input.");
+} while (true);
+
+for (int i = 1; i <= number; i++)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write(j);
+    }
+    Console.WriteLine();
+}
+
+        // SUMMATION
+
+Console.WriteLine("II. SUMMATION");
+
+ Console.Write("Enter a positive integer: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        if (num >= 1)
+        {
+            int sum = 0;
+            for (int i = 1; i <= num; i++)
+            {
+                sum += i;
+            }
+
+            Console.WriteLine($"Input: {num}");
+            Console.WriteLine($"Formula: 1+2+...+{num}");
+            Console.WriteLine($"Output: {sum}");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a positive integer.");
+        }
+        
+        
+        
+        // INVERSED-RIGHT TRIANGLE
+
+Console.WriteLine("III. INVERSED-RIGHT TRIANGLE");
+
+        int num3;
+
+do
+{
+    Console.Write("Input: ");
+} while (!int.TryParse(Console.ReadLine(), out num3) || num3 <= 0);
+
+for (int i = num3; i >= 1; i--)
+{
+    for (int j = 1; j <= i; j++)
+    {
+        Console.Write(j);
+    }
+    Console.WriteLine();
+}
+    }
+}
+        
+        
+       
+    
+    
